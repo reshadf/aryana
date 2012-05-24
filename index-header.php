@@ -10,6 +10,7 @@
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
@@ -17,6 +18,7 @@
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
+    <div class="logo"><h1>Aryana <ins>Taxi</ins> Haarlem</h1></div>
       <nav>
      <ul>                   
         <?php

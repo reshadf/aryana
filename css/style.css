@@ -9,11 +9,10 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #f55600; color: #fff; text-shadow: none; }
+::selection { background: #f55600; color: #fff; text-shadow: none; }
 
 a { color: #00e; }
-a:visited { color: #551a8b; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
@@ -22,7 +21,7 @@ b, strong { font-weight: bold; }
 blockquote { margin: 1em 40px; }
 dfn { font-style: italic; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-ins { background: #ff9; color: #000; text-decoration: none; }
+ins { background: #fff; color: #f55600; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
@@ -106,18 +105,19 @@ body {
   margin: 0 auto;
   padding: 5px 10px 10px 10px;
   width: 1140px;
-  -moz-box-shadow: 0 0 5px 5px #888;
--webkit-box-shadow: 0 0 5px 5px#888;
-box-shadow: 0 0 5px 5px #888;
+  margin-top: 25px;
 }
 
 header {
   margin-top: 25px;
   background: #fff;
-  border: 5px solid #F55600;
-  border-radius: 15px;
   padding: 10px;
   height: 50px;
+}
+
+nav {
+  margin: 0 auto;
+  float: right;
 }
 
 nav ul li {
@@ -127,28 +127,114 @@ nav ul li {
 nav li {
   float: left;
   margin: 0 auto;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 nav a {
   text-decoration: none;
-  color: #232323;
+  color: #9B9B9B;
+  background-color: #F2EBEE;
+  -webkit-border-radius: 15px 0px 15px 0px;
+  -moz-border-radius: 15px 0px 15px 0px;
+  border-radius: 15px 0px 15px 0px;
+  padding: 10px;
 }
 
 nav a:hover {
   color: #F55600;
+  -webkit-border-radius: 0px 15px 0px 15px;
+  -moz-border-radius: 0px 15px 0px 15px;
+  border-radius: 0px 15px 0px 15px;
 }
 
-.container {
+.logo {
+  float: left;
+}
+
+.logo h1 {
+  color: #232323;
+  font: italic 28px "Tahoma", Tahoma;
+  text-shadow: 0 1px 0 #fff;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  transition: all 200ms linear;
+  
+  /* Gain the benefits from GPU acceleration */
+  -webkit-transform: translateZ(0);
+  /*-moz-transform: translateZ(0);*/
+  transform: translateZ(0);
+}
+
+.logo h1:hover {
+  background: none;
+  text-shadow: 0 1px 0 #fff;
+  cursor: pointer;
+  /* Scale the site title on hover */
+  -webkit-transform: scale(1.1) translateZ(0);
+  /*-moz-transform: scale(1.1) translateZ(0);*/
+  transform: scale(1.1) translateZ(0);
+}
+
+.container
+{
+  position: relative;
+  width: 1040px;
+  min-height: 510px;
+  padding: 50px;
   margin: 0 auto;
-  padding: 0;
-  width: 1140px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.container:before, .container:after
+{
+  position: absolute;
+  width: 25%;
+  height: 10px;
+  content: ' ';
+  left: 12px;
+  bottom: 12px;
+  background: transparent;
+  -webkit-transform: skew(-5deg) rotate(-5deg);
+  -moz-transform: skew(-5deg) rotate(-5deg);
+  -ms-transform: skew(-5deg) rotate(-5deg);
+  -o-transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-5deg) rotate(-5deg);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+} 
+
+.container:after
+{
+  left: auto;
+  right: 12px;
+  -webkit-transform: skew(5deg) rotate(5deg);
+  -moz-transform: skew(5deg) rotate(5deg);
+  -ms-transform: skew(5deg) rotate(5deg);
+  -o-transform: skew(5deg) rotate(5deg);
+  transform: skew(5deg) rotate(5deg);
+} 
+
+
+.content {
+  width: 570px;
+}
+
+.current {
+  color: #F55600;
+  -webkit-border-radius: 0px 15px 0px 15px;
+  -moz-border-radius: 0px 15px 0px 15px;
+  border-radius: 0px 15px 0px 15px;
 }
 
 footer {
-  margin: 0 auto;
+  margin: 25px auto;
   padding: 0;
   height: 30px;
   border-top: 1px dashed #F55600; 
-  text-align: center;
+  text-align: left;
 }

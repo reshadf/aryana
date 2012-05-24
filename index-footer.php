@@ -1,6 +1,6 @@
 </div>
   <footer>
-  	<p>copyright</p>
+  	<p>copyright &copy;</p>
   </footer>
 
 
