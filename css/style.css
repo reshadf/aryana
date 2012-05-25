@@ -21,7 +21,7 @@ b, strong { font-weight: bold; }
 blockquote { margin: 1em 40px; }
 dfn { font-style: italic; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-ins { background: #fff; color: #f55600; text-decoration: none; }
+ins { background: none; color: #f55600; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
@@ -110,7 +110,6 @@ body {
 
 header {
   margin-top: 25px;
-  background: #fff;
   padding: 10px;
   height: 50px;
 }
@@ -138,13 +137,18 @@ nav a {
   -moz-border-radius: 15px 0px 15px 0px;
   border-radius: 15px 0px 15px 0px;
   padding: 10px;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
 }
 
 nav a:hover {
-  color: #F55600;
+  color: #fff;
+  background-color: #f55600;
   -webkit-border-radius: 0px 15px 0px 15px;
   -moz-border-radius: 0px 15px 0px 15px;
-  border-radius: 0px 15px 0px 15px;
+  border-radius: 0px 15px 0px 15px; 
 }
 
 .logo {
@@ -237,4 +241,128 @@ footer {
   height: 30px;
   border-top: 1px dashed #F55600; 
   text-align: left;
+}
+
+.bookingform {
+
+  float: left;
+}
+
+/**
+ * Forms
+ */
+ 
+  /* 1) Make inputs and buttons play nice in IE: www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
+     2) WebKit browsers add a 2px margin outside the chrome of form elements. 
+      Firefox adds a 1px margin above and below textareas 
+     3) Align to baseline */
+  button, input, select, textarea { width: auto; overflow: visible; margin: 0; vertical-align: baseline; outline: none; }
+
+  /* 1) Remove default scrollbar in IE: www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
+       2) Align to text-top */
+  textarea { overflow: auto; vertical-align: text-top; }
+  
+  /* Hand cursor on clickable input elements */
+  label[for], input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+  
+  /* Remove extra padding and inner border in Firefox */
+  input::-moz-focus-inner,
+  button::-moz-focus-inner { border: 0; padding: 0; }
+  
+  input[type="button"],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="submit"],
+  select {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  
+button, input, select, textarea, label {
+  font: 16px 'Droid Serif', Georgia, serif; 
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 7px 10px;
+}
+
+fieldset {
+  background: rgba(204, 204, 204, 0.2);
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  padding: 20px;
+  -webkit-box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+legend {
+  font: bold 20px 'Tahoma', Tahoma, serif;
+  padding: 10px 12px; 
+}
+
+/* Input fields */
+input,
+textarea {
+  background: #fff;
+  border: none;
+   -webkit-border-radius: 15px 0px 15px 0px;
+  -moz-border-radius: 15px 0px 15px 0px;
+  border-radius: 15px 0px 15px 0px;
+  color: #777;
+  padding: 10px 15px;
+  -webkit-box-shadow: 0px 1px 1px #bbb;
+  -moz-box-shadow: 0px 1px 1px #bbb;
+  box-shadow: 0px 1px 1px #bbb;
+}
+
+
+textarea {
+   -webkit-border-radius: 15px 0px 15px 0px;
+  -moz-border-radius: 15px 0px 15px 0px;
+  border-radius: 15px 0px 15px 0px;
+  width: 300px;
+  height: 100px;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+select {
+  margin-left: 10px;
+}
+
+/* Submit */
+input[type="submit"] {
+  color: #000;
+}
+
+input[type="submit"]:hover {
+  color: #f55600;
+   -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+}
+
+
+.searchform input[type="search"] {
+  padding-right: 0;
+  max-width: 200px;
+}
+
+.searchform input[type="submit"] {
+  padding: 10px 12px;
+  float: right;
 }
