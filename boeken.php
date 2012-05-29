@@ -1,16 +1,12 @@
-<section>
-  <article>
-
-<h1>Online Boeking</h1>
+        <h1>Online Boeking</h1>
 <h2>Boek uw rit online, dan bellen we u zo snel mogelijk terug!</h2>
-<small>let op! alle velden zijn verplicht</small>
+ <small>let op! alle velden zijn verplicht</small>
  
-<form name="bookingform" action="" method="post">
+  <form name="bookingform" action="" method="post">
 <fieldset><legend>Uw gegevens</legend>
-        
-  <label>Naam:</label>
+        <label>Naam:</label>
 
-  <input type="text" name="naam" id="textfield" class="qform"/>
+      <input type="text" name="naam" id="textfield" class="qform"/>
 
 
 
@@ -18,7 +14,7 @@
 
 <label>E-mail:</label>
 
-<input type="email" name="email" id="textfield3" class="qform" />
+<input type="text" name="email" id="textfield3" class="qform" />
 
 </fieldset>
   <fieldset><legend>Adres gegevens</legend>
@@ -204,7 +200,7 @@
 
       <label>Postcode:</label>
 
-       <input type="text" name="postcode" id="textfield7" class="qform" placeholder="voorbeeld: 1234 AB" />
+       <input type="text" name="postcode" id="textfield7" class="qform" />
 
 
                           <label>Bestemming:</label>
@@ -230,7 +226,7 @@
 
                          <label>Suggesties/opmerkingen:</label>
 
-                          <textarea name="suggesties" id="textarea" cols="18" rows="2" class="qformtextarea" placeholder="Vul dit veld in als u speciale wensen heeft."></textarea> <br><br>
+                          <textarea name="suggesties" id="textarea" cols="18" rows="2" class="qformtextarea"></textarea> <br><br>
 
                           <INPUT TYPE="submit" name="submit" value="Verzenden">                          
 
@@ -249,6 +245,3 @@
       ?>
       </fieldset>
     </form>
-
-    </article>
-  </section>
