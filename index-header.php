@@ -17,35 +17,32 @@
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header><section>
+  <header>
     <div class="logo"><h1>Aryana <ins>Taxi</ins> Haarlem</h1></div>
-    </section>
-    <section>
       <nav>
-        <ul>                   
-            <?php
-            if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", true)))
+     <ul>                   
+        <?php
+        if (file_exists("index.ini") && is_array($content = parse_ini_file("index.ini", true)))
+        {
+            if (array_key_exists("navigation", $content))
             {
-                if (array_key_exists("navigation", $content))
-                {
-                    foreach ($content["navigation"] as $basename => $title)
-                    {       
-                        if(isset($_GET['page']) and $_GET['page'] == $basename)
+                foreach ($content["navigation"] as $basename => $title)
+                {       
+                    if(isset($_GET['page']) and $_GET['page'] == $basename)
 
-                        {
-                            $class = 'current';
-                        }
-                        else
-                        {
-                            $class = '';
-                        }
-                            echo '<li><a class="' . $class . '" href="index.php?page=' . $basename . '">' . $title . '</a></li>';
+                    {
+                        $class = 'current';
                     }
+                    else
+                    {
+                        $class = '';
+                    }
+                        echo '<li><a class="' . $class . '" href="index.php?page=' . $basename . '">' . $title . '</a></li>';
                 }
             }
-            ?>
-        </ul> 
+        }
+        ?>
+    </ul> 
     </nav>
-    </section>
   </header>
   <div class="container" role="main">
